@@ -2,9 +2,9 @@
 <configuration>
   <appSettings>
 
-    <add key="SourceConnectionString" value="Data Source=T17-SQL-2\SQL08;Initial Catalog=SoH_Repl;User id=r;Password=r"/>
+    <add key="SourceConnectionString" value="Data Source=.;Initial Catalog=Sh;Integrated Security=True"/>
     
-	  <add key="DestinationConnectionString" value="Data Source=T17-SQL-2\SQL08;Initial Catalog=TDCS_Seyroharekat;User id=replication;Password=replic@ti0n"/>
+	<add key="DestinationConnectionString" value="Data Source=.;Initial Catalog=Sh;Integrated Security=True"/>
 
     <add key="DbCommandTimeout_s" value="60"/>
     

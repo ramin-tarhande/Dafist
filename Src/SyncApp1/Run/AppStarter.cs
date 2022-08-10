@@ -2,8 +2,8 @@
 using System.Windows.Forms;
 using log4net;
 using SyncApp1.SchemaDef;
-using TDCS.Logging;
-using TDCS.Yaml;
+using CsLoggingTools;
+using CsYamlTools;
 using Dafist.Engine;
 using Dafist.Engine.Composing;
 using Dafist.Engine.Composing.ConsumePart;

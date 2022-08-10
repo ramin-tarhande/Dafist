@@ -34,6 +34,7 @@ namespace DataGen.Data
             }
             catch(Exception x)
             {
+                var m = x.Message;
                 if (Debugger.IsAttached)
                 {
                     Debugger.Break();    

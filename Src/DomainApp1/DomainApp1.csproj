@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsLoggingTools">
+      <HintPath>..\..\Lib\CsLoggingTools.dll</HintPath>
+    </Reference>
     <Reference Include="EasyNetQ">
       <HintPath>..\..\Lib\EasyNetQ.dll</HintPath>
     </Reference>
@@ -54,9 +57,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="TDCS.Logging">
-      <HintPath>..\..\Lib\TDCS.Logging.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\DefaultResponsibleFinder.cs" />

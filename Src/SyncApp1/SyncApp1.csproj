@@ -37,6 +37,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsLoggingTools">
+      <HintPath>..\..\Lib\CsLoggingTools.dll</HintPath>
+    </Reference>
+    <Reference Include="CsYamlTools">
+      <HintPath>..\..\Lib\CsYamlTools.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\Lib\log4net.dll</HintPath>
     </Reference>
@@ -44,15 +50,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="TDCS.General">
-      <HintPath>..\..\Lib\TDCS.General.dll</HintPath>
-    </Reference>
-    <Reference Include="TDCS.Logging">
-      <HintPath>..\..\Lib\TDCS.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="TDCS.Yaml">
-      <HintPath>..\..\Lib\TDCS.Yaml.dll</HintPath>
-    </Reference>
     <Reference Include="YamlDotNet">
       <HintPath>..\..\Lib\YamlDotNet.dll</HintPath>
     </Reference>

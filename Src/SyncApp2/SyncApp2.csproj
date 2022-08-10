@@ -37,6 +37,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsGenTools, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\CsGenTools.dll</HintPath>
+    </Reference>
+    <Reference Include="CsLoggingTools">
+      <HintPath>..\..\Lib\CsLoggingTools.dll</HintPath>
+    </Reference>
+    <Reference Include="CsYamlTools">
+      <HintPath>..\..\Lib\CsYamlTools.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\Dapper.dll</HintPath>
@@ -49,16 +59,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="TDCS.General, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lib\TDCS.General.dll</HintPath>
-    </Reference>
-    <Reference Include="TDCS.Logging">
-      <HintPath>..\..\Lib\TDCS.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="TDCS.Yaml">
-      <HintPath>..\..\Lib\TDCS.Yaml.dll</HintPath>
-    </Reference>
     <Reference Include="YamlDotNet">
       <HintPath>..\..\Lib\YamlDotNet.dll</HintPath>
     </Reference>

@@ -1,4 +1,4 @@
-﻿using TDCS.General.Tools;
+﻿using CsGenTools.Counters;
 using Dafist.Engine.Buffers;
 
 namespace Dafist.Engine.Progress

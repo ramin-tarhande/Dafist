@@ -4,7 +4,7 @@ using DomainApp1.Domain;
 using DomainApp1.Tools;
 using EasyNetQ;
 using log4net;
-using TDCS.Logging;
+using CsLoggingTools;
 
 namespace DomainApp1.Run
 {
