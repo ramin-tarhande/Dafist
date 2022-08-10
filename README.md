@@ -9,6 +9,6 @@ This is a lightweight, robust and general-purpose tool that can be used to autom
 * Support connecting to anything; not just relational or NoSQL databases or message brokers.
 * Support data routing graphs by creating different Dafist nodes
 
-## Sample applications diagram:
-aaaa
+## Sample applications:
+Here is a diagram of some sample applications; you can find source code of all in the solution
     ![Sample Applications](sampleApps.png)
