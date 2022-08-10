@@ -1,5 +1,4 @@
-﻿using TDCS.General;
-using TDCS.General.Tools;
+﻿using TDCS.General.Tools;
 using Dafist.Engine.Buffers;
 
 namespace Dafist.Engine.Progress
