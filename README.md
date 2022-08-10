@@ -10,4 +10,4 @@ This is a lightweight, robust and general-purpose tool that can be used to autom
 * Support data routing graphs by creating different Dafist nodes
 
 ## Sample applications diagram:
-    ![Sample Applications](/Doc/sampleApps.png)
+    ![Sample Applications](Doc/sampleApps.png)
