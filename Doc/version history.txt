@@ -1,0 +1,61 @@
+﻿0.3.0.2 
+
+0.5.0.0	reading: timer based -> thread
+			reasons: 
+				avoid 'OutOfMemory' crash (load smaller chunks)
+				minimize latency 
+		change waiting of threads from sleep to wait on a signal (event) 
+		consider data problems as invalid data & don't retry for them
+			SqlTypeException 
+			or following SqlExceptions
+				2627, //pk
+                2601, //unique index
+                245, //conversion
+                547, //constraint/fk
+                515, //not nullable
+                8152  //data would be truncated
+		other:
+			make UpdateFactory static (because of outofmemory exception case) 
+		(100k) (core incl. ui: 80)
+		98/9		
+
+0.7.0.0	alternative target lookup removed (we need src ids for delete anyway)
+		add 'Auto' target field (for clarity)
+		in 'Custom' target field we can load/use data from another table
+		consider dataproblem/failure in computation
+		remove extra try/catch from Mapper: 
+			exception that we want to catch & handle are dealed with in lower levels 
+			so if an exception reaches here let it go up & stop the engine
+		detect schema definition errors in get & consume & quit the app with a proper message
+		add sync schema validations
+		don't compute id data, extract it from already computed Mapper.MapSingle
+		separte mapping from consuming & define targetUpdates
+		do upsert inside an sql transaction (required if others write) (performance dropped by 15%)
+		Sleeper: use ManualResetEvent in place of Thread.Sleep
+		a problem in exception handling of openning of db connection fixed (it used to log & return null connection)
+		major: ms-sql related code separated from engine
+		SafeExecuter register in a club (SafeExecutersClub) and are stopped together before all
+		varied consumption
+		add rabbitmq support
+		'Get' may be Load (polling, like mssql) or Receive (push based, like rabbit)
+		distinguish Created & Modified UpdateTypes
+		renames:
+			table->entity, desti->target, change->update
+			Formula->Custom
+			AutoSqlSync-> SquirrelSync - > Dafist
+			Core-> Engine
+		other: 
+			counter resetting for failures/invalids after wrapping of readsCounter disabled
+			quitApp can be defined externally
+			add locking for invalid/fail counters
+			remove unknown states
+			use yaml for config: support multiple target connection strings
+			add semicolon after insert/update/delete
+			separate (mssql dependent) updates loading 
+			updates: inheritance -> enum property
+			NotRecognized ProblemType added; it's treated as RetriableFailure in ProblemProcessor
+			SleepLogger added (for debug)
+			change logging of consumer (indent consumers..)
+		(200k)	(core incl. ui: 130)		
+		98/9, 0/7
+(NOT DEPLOYED)

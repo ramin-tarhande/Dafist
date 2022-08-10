@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58385C61-3959-4CF5-8B5E-763BCB254D91}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dafist.Engine</RootNamespace>
+    <AssemblyName>Dafist.Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="TDCS.General, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\TDCS.General.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buffers\BufferEvents.cs" />
+    <Compile Include="Buffers\UpdatesBuffer.cs" />
+    <Compile Include="ConsumerBasics.cs" />
+    <Compile Include="Consume\ConsumingManager.cs" />
+    <Compile Include="Composing\CommonObjects.cs" />
+    <Compile Include="Composing\ConsumePart\ConsumePartComposer.cs" />
+    <Compile Include="Composing\ConsumePart\DefaultConsumePartComposer.cs" />
+    <Compile Include="Composing\GetPart\GetPartComposer.cs" />
+    <Compile Include="Composing\GetPart\GetProblemProcessorFactory.cs" />
+    <Compile Include="Composing\GetPart\Load_GetPartComposer.cs" />
+    <Compile Include="Composing\GetPart\Receive_GetPartComposer.cs" />
+    <Compile Include="FieldsData\IDictionaryExtensions.cs" />
+    <Compile Include="Get\GettingManager.cs" />
+    <Compile Include="Get\Receive\ReceiveDirector.cs" />
+    <Compile Include="Get\Receive\Receiver.cs" />
+    <Compile Include="ObjectFactories\LoadObjectsFactory.cs" />
+    <Compile Include="ObjectFactories\ReceiveObjectsFactory.cs" />
+    <Compile Include="Resilience\Problems\ProblemTypeExpert.cs" />
+    <Compile Include="Resilience\SafeExecution\SafeExecutersClub.cs" />
+    <Compile Include="Resilience\Problems\FixedPte.cs" />
+    <Compile Include="Schemas\Mappings\MappingFactory.cs" />
+    <Compile Include="Schemas\Mappings\MappingExtensions.cs" />
+    <Compile Include="Schemas\Source\MappingFinder.cs" />
+    <Compile Include="Schemas\Mapping.cs" />
+    <Compile Include="Schemas\Mappings\TypedMapping.cs" />
+    <Compile Include="Schemas\Mappings\DefaultMapping.cs" />
+    <Compile Include="Tools\SleepLogger.cs" />
+    <Compile Include="Updates\Extensions.cs" />
+    <Compile Include="Updates\TargetUpdate.cs" />
+    <Compile Include="Updates\SourceUpdate.cs" />
+    <Compile Include="ObjectFactories\ConsumeObjectsFactory.cs" />
+    <Compile Include="ObjectFactories\GetObjectsFactory.cs" />
+    <Compile Include="Composing\SimpleDepencies.cs" />
+    <Compile Include="QuitApp.cs" />
+    <Compile Include="Get\Load\Loader.cs" />
+    <Compile Include="Resilience\Problems\FixedNonSchemaPte.cs" />
+    <Compile Include="Resilience\SchemaErrors\ExternalSystemNotAvailableException.cs" />
+    <Compile Include="Resilience\SchemaErrors\InvalidSourceDataException.cs" />
+    <Compile Include="Resilience\Problems\Problem.cs" />
+    <Compile Include="Resilience\Problems\ProblemType.cs" />
+    <Compile Include="Resilience\SafeExecution\ReactionType.cs" />
+    <Compile Include="Resilience\SafeExecution\TryResult.cs" />
+    <Compile Include="Conversion\ConversionExtensions.cs" />
+    <Compile Include="Resilience\SchemaErrors\InternalSchemaErrorRecognizer.cs" />
+    <Compile Include="Consume\Map\MappingSee.cs" />
+    <Compile Include="Resilience\SchemaErrors\ActiveSee.cs" />
+    <Compile Include="Composing\Root\EngineComposer.cs" />
+    <Compile Include="Resilience\SchemaErrors\IgnorantSee.cs" />
+    <Compile Include="Resilience\SchemaErrors\SchemaErrorException.cs" />
+    <Compile Include="FieldsData\TargetFieldDataSet.cs" />
+    <Compile Include="FieldsData\SourceFieldDataSet.cs" />
+    <Compile Include="Resilience\SchemaErrors\SchemaErrorExpert.cs" />
+    <Compile Include="Resilience\SchemaErrors\Validations.cs" />
+    <Compile Include="SourceFieldValues.cs" />
+    <Compile Include="Progress\ProgressMeter.cs" />
+    <Compile Include="GetState.cs" />
+    <Compile Include="Resilience\SchemaErrors\FieldNotFoundException.cs" />
+    <Compile Include="Schemas\Mappings\TargetFieldExtensions.cs" />
+    <Compile Include="Resilience\Problems\SeparatedSchemaPte.cs" />
+    <Compile Include="Consume\Consumer.cs" />
+    <Compile Include="Consume\Map\ConsumeMapper.cs" />
+    <Compile Include="Consume\Map\MappingPte.cs" />
+    <Compile Include="Buffers\StopState.cs" />
+    <Compile Include="SyncProgress.cs" />
+    <Compile Include="Facade\EngineFacade.cs" />
+    <Compile Include="FieldsData\FieldData.cs" />
+    <Compile Include="FieldsData\FieldDataSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Get\Load\LoadDriver.cs" />
+    <Compile Include="EngineSettings.cs" />
+    <Compile Include="Get\Load\LoadDirector.cs" />
+    <Compile Include="Schemas\Mappings\TargetField.cs" />
+    <Compile Include="Schemas\Mappings\TargetEntity.cs" />
+    <Compile Include="Schemas\Top\Schema.cs" />
+    <Compile Include="Schemas\Source\SourceEntity.cs" />
+    <Compile Include="Resilience\SafeExecution\SafeExecuter.cs" />
+    <Compile Include="Tools\PerfLogTool.cs" />
+    <Compile Include="Tools\Sleeper.cs" />
+    <Compile Include="ConsumeState.cs" />
+    <Compile Include="Tools\ThreadRunner.cs" />
+    <Compile Include="Consume\Top\ConsumeDriver.cs" />
+    <Compile Include="Resilience\SafeExecution\ProblemProcessor.cs" />
+    <Compile Include="Consume\Top\ConsumeDirector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{50ed6612-6034-484c-807a-61048406e7a3}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

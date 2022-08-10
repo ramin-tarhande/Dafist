@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DomainApp1" GeneratedClassName="Da1Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RabbitMq_Host" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="RabbitMq_ReceiveExchange" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D1Updates</Value>
+    </Setting>
+    <Setting Name="RabbitMq_SendExchange" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ImportantComments</Value>
+    </Setting>
+    <Setting Name="RabbitMq_Topic" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Commentm.#</Value>
+    </Setting>
+    <Setting Name="RabbitMq_AutoDeleteQueue" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MoodThreshold" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="AuthorScoreThreshold" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">70</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

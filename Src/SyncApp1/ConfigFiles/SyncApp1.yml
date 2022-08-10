@@ -1,0 +1,31 @@
+﻿SourceConnectionString:  'Data Source=.;Initial Catalog=DafistTest;Integrated Security=True;'
+#SourceConnectionString: 'Data Source=.;Initial Catalog=Cts;user id=sa;Password=123;'
+
+TargetConnectionString: 'Data Source=.;Initial Catalog=DafistTest;Integrated Security=True;'
+#TargetConnectionString: 'Data Source=.;Initial Catalog=Cts;user id=sa;Password=123;'
+   
+DbCommandTimeout_s: 60
+    
+LogAffectedRows: false
+
+# set to true if others may write to target tables 
+# otherwise set to false because it has a performance penalty (~20%)
+#
+UseTransactions: false
+    
+#LoadMaxVersionDiff: 5
+LoadMaxVersionDiff: 1000
+
+BufferSizeThreshold: 10000
+#BufferSizeThreshold: 1000
+
+LoadIdleSleepTime:  00:00:01
+
+FailureSleepTime:  00:00:20
+
+CountWrapping: 1000000
+
+RabbitMq_Host: 'localhost'
+RabbitMq_Exchange: 'D1Updates'
+
+ConfirmExit: false

@@ -1,0 +1,29 @@
+﻿TargetConnectionString: 'Data Source=.;Initial Catalog=DafistTest;Integrated Security=True;'
+   
+DbCommandTimeout_s: 60
+
+LogAffectedRows: false
+
+# set to true if others may write to target tables 
+# otherwise set to false because it has a performance penalty (~20%)
+#
+UseTransactions: false
+
+#BufferSizeThreshold: 13
+BufferSizeThreshold: 10000
+
+LoadIdleSleepTime:  00:00:01
+
+FailureSleepTime:  00:00:20
+
+CountWrapping: 1000000
+
+RabbitMq_Host: 'localhost'
+RabbitMq_Exchange: 'D1Updates'
+RabbitMq_AutoDeleteQueue: true
+RabbitMq_Topic: '#'
+
+ConfirmExit: false
+
+ConsumptionDelay: false
+ConsumptionDelayTime: 00:00:01

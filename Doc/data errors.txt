@@ -1,0 +1,86 @@
+
+ SELECT * FROM sysmessages where msglangid=1033
+ SELECT * FROM sysmessages where error=2601 and msglangid=1033
+ SELECT * FROM sysmessages where description like '%violation%' and msglangid=1033
+ SELECT * FROM sysmessages where severity=14 and msglangid=1033 order by error
+ SELECT * FROM sysmessages where (description like '%convert%' or description like '%conversion%') and msglangid=1033
+ SELECT * FROM sysmessages where (description like '%connection%' or description like '%timeout%') and msglangid=1033
+
+ list: https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/cc645603(v=sql.105)?redirectedfrom=MSDN
+
+ Database Engine Error Severities:
+ https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-error-severities?view=sql-server-2014&redirectedfrom=MSDN
+
+data related:
+
+pk:
+	Class	14	byte
+	Number	2627	int
+
+unique index
+		Class	14	byte
+		Number	2601	int
+
+conversion
+		Class	16	byte
+		Number	245	int
+
+constraint
+		Class	16	byte
+		Number	547	int
+
+fk: 
+	class 16
+	Number	547	int
+
+not nullable
+		Class	16	byte
+		Number	515	int
+
+data would be truncated
+		Class	16	byte
+		Number	8152	int
+
+
+-		[System.Data.SqlTypes.SqlTypeException]	{"SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM."}	System.Data.SqlTypes.SqlTypeException
+
+non data related class 16:
+		schema related
++		"Could not find stored procedure 'Xyz'." System.Data.Common.DbException {System.Data.SqlClient.SqlException}
+		Class	16	byte
+		Number	2812	int
+
+.........
+connection related
+
+https://stackoverflow.com/questions/29664/how-to-catch-sqlserver-timeout-exceptions
+https://stackoverflow.com/questions/13159326/implementing-retry-logic-for-deadlock-exceptions/13159533
+
+-		[System.Data.SqlClient.SqlException]	{"A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The specified network name is no longer available.)"}	System.Data.SqlClient.SqlException
+		Class	20	byte
+		Number	64	int
+
+Change tracking is not enabled on table 'Good'."	System.Data.SqlClient.SqlException
+		Class	16	byte
+		Number	22105	int
+
+Transaction (Process ID %d) was deadlocked 
+1205	Class:13	
+
+		network dc: Number	64	int:		Class	20	byte
+
+        public const int TimeoutExpired = -2;
+        public const int Deadlock = 1205; //class 13
+        public const int CouldNotOpenConnection = 53;
+        public const int TransportFail = 121;
+
+https://stackoverflow.com/questions/1980937/list-of-sql-server-errors-that-should-be-retried
+
+SELECT  *
+FROM    master.dbo.sysmessages
+WHERE   msglangid = 1033
+        AND (description LIKE '%try%later.' OR description LIKE '%. rerun the%')
+        AND description NOT LIKE '%resolve%'
+        AND description NOT LIKE '%and try%'
+        AND description NOT LIKE '%and retry%'
+order by severity,error

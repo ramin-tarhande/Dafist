@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0149D36C-CBCC-4A1E-BF03-DC9CB1CE1351}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dafist.MsSqlAdp</RootNamespace>
+    <AssemblyName>Dafist.MsSqlAdp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\Lib\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SqlBuilder">
+      <HintPath>..\..\Lib\Dapper.SqlBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Consume\MsConsumePte.cs" />
+    <Compile Include="Consume\TransactionTextAdder.cs" />
+    <Compile Include="Consume\MsUpsertDao.cs" />
+    <Compile Include="Get\UpdateFactory.cs" />
+    <Compile Include="Get\ChangeTrackingDao.cs" />
+    <Compile Include="Get\CtSqlExpert.cs" />
+    <Compile Include="Get\MsLoader.cs" />
+    <Compile Include="Get\PkPrefixer.cs" />
+    <Compile Include="Get\SpecialFieldNames.cs" />
+    <Compile Include="Get\CtUpdateTypeExpert.cs" />
+    <Compile Include="Get\VersionRange.cs" />
+    <Compile Include="Get\VersionRangeExpert.cs" />
+    <Compile Include="MsTargetSqlSettings.cs" />
+    <Compile Include="ObjectFactories\MsRobustDaBasicsFactory.cs" />
+    <Compile Include="SchemaErrors\MsSee.cs" />
+    <Compile Include="ObjectFactories\MsConsumeObjectsFactory.cs" />
+    <Compile Include="ObjectFactories\MsLoadObjectsFactory.cs" />
+    <Compile Include="Updates\MsSourceUpdate.cs" />
+    <Compile Include="MsSourceSqlSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Updates\Version.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{58385c61-3959-4cf5-8b5e-763bcb254d91}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{50ed6612-6034-484c-807a-61048406e7a3}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SqlCommon\SqlCommon.csproj">
+      <Project>{cf69020f-ee0c-40ff-9c48-cfd817f2548a}</Project>
+      <Name>SqlCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
