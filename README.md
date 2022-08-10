@@ -11,4 +11,4 @@ This is a lightweight, robust and general-purpose tool that can be used to autom
 
 ## Sample applications:
 Here is a diagram of some sample applications; you can find source code of all in the solution
-    ![Sample Applications](sampleApps.png)
+    ![Sample Applications](/Doc/sampleApps.png)
