@@ -15,7 +15,6 @@ using Dafist.Engine.ObjectFactories;
 using Dafist.Engine.Schemas.Top;
 using Dafist.MessagingCommon;
 using Dafist.MsSqlAdp.ObjectFactories;
-using Dafist.RabbitAdp;
 using Dafist.RabbitAdp.ObjectFactories;
 using Dafist.Ui;
 using Dafist.Ui.Tools;
@@ -30,7 +29,7 @@ namespace SyncApp4.Run
         private ILog log;
         public Form Start()
         {
-            return DebugFriendly.TryExecute(StartCore, log);
+            return DfDebugFriendly.TryExecute(StartCore, log);
         }
 
         private Form StartCore()

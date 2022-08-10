@@ -4,7 +4,7 @@ using TDCS.General;
 
 namespace Dafist.Ui.Tools
 {
-    public static class DebugFriendly
+    public static class DfDebugFriendly
     {
         public static T TryExecute<T>(Func<T> code, ILog log)
         {

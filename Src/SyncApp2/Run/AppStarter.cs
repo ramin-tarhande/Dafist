@@ -26,7 +26,7 @@ namespace SyncApp2.Run
         private ILog log;
         public Form Start()
         {
-            return DebugFriendly.TryExecute(StartCore, log);
+            return DfDebugFriendly.TryExecute(StartCore, log);
         }
 
         private Form StartCore()
